@@ -58,12 +58,24 @@ def main():
             print(f"!!!!----book '{title}' added succesfully---!!!")
 
         elif ch=="2":
-            isbn=input("enter isbn number of the book: ")
+            isbn=input("enter isbn of the book to borrow: ")
             try:
                 library.borrow_book(isbn)
                 print("book borrowed successfully!!!!")
             except ValueError as e:
                 print(e)
+        
+        elif ch=="3":
+            isbn=input("enter isbn of the book to return: ")
+            try:
+                library.return_book(isbn)
+                print("book returned successfully!!!!")
+            except ValueError as e:
+                print(e)
+            
+        elif ch=="5":
+            print("Good Bye!!")
+            break
 
 if __name__ == "__main__":
     main()
