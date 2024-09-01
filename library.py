@@ -49,13 +49,21 @@ def main():
         ch=input("enter your choice")
 
         if ch=="1":
-            isbn=input("enter isbn:")
-            title=input("enter title for book:")
-            author=input("enter author of the book:")
-            year=input("enter publication year:")
+            isbn=input("enter isbn: ")
+            title=input("enter title for book: ")
+            author=input("enter author of the book: ")
+            year=input("enter publication year: ")
             book=Book(isbn=isbn, title=title, author=author, year=year)
             library.add_book(book)
             print(f"!!!!----book '{title}' added succesfully---!!!")
+
+        elif ch=="2":
+            isbn=input("enter isbn number of the book: ")
+            try:
+                library.borrow_book(isbn)
+                print("book borrowed successfully!!!!")
+            except ValueError as e:
+                print(e)
 
 if __name__ == "__main__":
     main()
