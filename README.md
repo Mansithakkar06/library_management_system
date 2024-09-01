@@ -50,10 +50,10 @@ Choose option 5 to exit the application.
 
 
 ## Running the Tests
-- To run the test cases for the Library Management System, use the following command:
+- To run the test cases for the Library Management System, use the following command in cmd:
 
   python -m unittest test_library.py
-  
+
 
 ## Project Structure
 
