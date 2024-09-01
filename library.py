@@ -32,3 +32,30 @@ class Library:
     
     def view_available_books(self):
         return [book for book in self.books if not book.is_borrowed]
+
+#creating menu for all the functionalities so that user can easily access this
+def main():
+    library = Library()
+
+    #display the menu
+    while True:
+        print("|--------MENU---------|")
+        print("1. Add Book")
+        print("2. Borrow Book")
+        print("3. Return Book")
+        print("4. View Available Books")
+        print("5. Exit")
+
+        ch=input("enter your choice")
+
+        if ch=="1":
+            isbn=input("enter isbn:")
+            title=input("enter title for book:")
+            author=input("enter author of the book:")
+            year=input("enter publication year:")
+            book=Book(isbn=isbn, title=title, author=author, year=year)
+            library.add_book(book)
+            print(f"!!!!----book '{title}' added succesfully---!!!")
+
+if __name__ == "__main__":
+    main()
