@@ -73,6 +73,15 @@ def main():
             except ValueError as e:
                 print(e)
             
+        elif ch=="4":
+            available_books=library.view_available_books()
+            if available_books:
+                print("AVAILABLE BOOKS: ")
+                for book in available_books:
+                    print(f"ISBN : {book.isbn},TITLE : {book.title} , AUTHOR : {book.author} , YEAR : {book.year}")
+            else:
+                print("no books available!!!")
+
         elif ch=="5":
             print("Good Bye!!")
             break
