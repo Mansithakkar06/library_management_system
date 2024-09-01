@@ -22,4 +22,11 @@ class Library:
                 book.is_borrowed=True
                 return
         raise ValueError("Book is not available or there is no book of this name")
+    
+    def return_book(self,isbn):
+        for book in self.books:
+            if book.isbn == isbn and book.is_borrowed:
+                book.is_borrowed=False
+                return
+        raise ValueError("this book was not borrowed or it does not exists")
 
